@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>379413776543-slv1rru9nl8rerith8d0j18cbs3d39tf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.379413776543-slv1rru9nl8rerith8d0j18cbs3d39tf</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDUTHO3AH1kejQMDxyxNVc4MXMBj6jcKrk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>379413776543</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.swiss.kaufesMobile</string>
+	<key>PROJECT_ID</key>
+	<string>kaufes-728d5</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kaufes-728d5.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:379413776543:ios:19a2675cdbb24cf4623aaa</string>
+</dict>
+</plist>

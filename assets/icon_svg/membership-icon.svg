@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="membership-icon" transform="translate(-50 -194)">
+    <rect id="Rectangle_1275" data-name="Rectangle 1275" width="24" height="24" transform="translate(50 194)" fill="none"/>
+    <g id="Group_39683" data-name="Group 39683">
+      <g id="Rectangle_1278" data-name="Rectangle 1278" transform="translate(50 197)" fill="none" stroke="#272727" stroke-width="1">
+        <rect width="24" height="17" rx="2" stroke="none"/>
+        <rect x="0.5" y="0.5" width="23" height="16" rx="1.5" fill="none"/>
+      </g>
+      <path id="Icon_awesome-user-alt" data-name="Icon awesome-user-alt" d="M4.043,4.548A2.274,2.274,0,1,0,1.769,2.274,2.275,2.275,0,0,0,4.043,4.548Zm2.021.505h-.87a2.749,2.749,0,0,1-2.3,0h-.87A2.021,2.021,0,0,0,0,7.075v.253a.758.758,0,0,0,.758.758h6.57a.758.758,0,0,0,.758-.758V7.075A2.021,2.021,0,0,0,6.064,5.054Z" transform="translate(52.509 201)" fill="#272727"/>
+      <rect id="Rectangle_1276" data-name="Rectangle 1276" width="9" height="3" rx="1" transform="translate(62 201)" fill="#272727"/>
+      <rect id="Rectangle_1277" data-name="Rectangle 1277" width="9" height="3" rx="1" transform="translate(62 206)" fill="#272727"/>
+    </g>
+  </g>
+</svg>

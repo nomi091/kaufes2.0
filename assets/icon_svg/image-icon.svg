@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="image-icon" transform="translate(-200 -172)">
+    <circle id="Ellipse_237" data-name="Ellipse 237" cx="16" cy="16" r="16" transform="translate(200 172)" fill="#18d9c5"/>
+    <path id="Icon_metro-image" data-name="Icon metro-image" d="M17.229,4.833l0,0V16.559l0,0H3.55l0,0V4.835l0,0Zm0-.977H3.548a.98.98,0,0,0-.977.977V16.561a.98.98,0,0,0,.977.977H17.23a.98.98,0,0,0,.977-.977V4.833a.98.98,0,0,0-.977-.977ZM15.276,7.277A1.466,1.466,0,1,1,13.81,5.811,1.466,1.466,0,0,1,15.276,7.277Zm.977,8.307H4.525V13.629L7.946,7.765l3.909,4.887h.977L16.253,9.72Z" transform="translate(205.429 177.144)" fill="#fff"/>
+  </g>
+</svg>

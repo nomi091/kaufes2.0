@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "379413776543",
+    "project_id": "kaufes-728d5",
+    "storage_bucket": "kaufes-728d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:379413776543:android:9cf9288223ca72e4623aaa",
+        "android_client_info": {
+          "package_name": "com.swiss.kaufesMobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "379413776543-6foh336ulg84bjsc1nlb4b09e6qqiqbk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7e6_XxtAAxoUudiOW6pfiLoQuciI41U0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "379413776543-6foh336ulg84bjsc1nlb4b09e6qqiqbk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "379413776543-slv1rru9nl8rerith8d0j18cbs3d39tf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.swiss.kaufesMobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

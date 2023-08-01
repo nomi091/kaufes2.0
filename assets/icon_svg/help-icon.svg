@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="help-icon" transform="translate(-6105 89)">
+    <rect id="Rectangle_1268" data-name="Rectangle 1268" width="24" height="24" transform="translate(6105 -89)" fill="none"/>
+    <path id="Icon_material-help-outline" data-name="Icon material-help-outline" d="M13,20.772h2.222V18.551H13ZM14.108,3A11.108,11.108,0,1,0,25.215,14.108,11.112,11.112,0,0,0,14.108,3Zm0,19.994a8.886,8.886,0,1,1,8.886-8.886A8.9,8.9,0,0,1,14.108,22.994Zm0-15.551a4.442,4.442,0,0,0-4.443,4.443h2.222a2.222,2.222,0,0,1,4.443,0C16.329,14.108,13,13.83,13,17.44h2.222c0-2.5,3.332-2.777,3.332-5.554A4.442,4.442,0,0,0,14.108,7.443Z" transform="translate(6103 -91)" fill="#272727"/>
+  </g>
+</svg>

@@ -1,0 +1,96 @@
+{
+  "On Bording Screen": "===============>",
+  "find_best_deals": "Die besten Angebote finden",
+  "sell_stuff": "Verkaufen Sie Ihre Sachen einfach",
+  "trusted_platform": "Vertrauenswürdige Plattform",
+  "dummy_text": "Lorem Ipsum ist seit dem 16. Jahrhundert der Standard-Text der Druck- und Satzindustrie.",
+  "terms_conditions": "Durch das Erstellen eines Kontos stimmen Sie den Nutzungsbedingungen und der Datenschutzerklärung von Kaufes zu.",
+ 
+  "Login Strings": "===============>", 
+  "login": "Anmelden",
+  "loginData": "Geben Sie Ihre Daten ein, um sich anzumelden",
+  "email": "E-Mail",
+  "hintEmail": "Geben Sie Ihre E-Mail ein",
+  "password": "Passwort",
+  "hintPassword": "Geben Sie Ihr Passwort ein",
+  "forgotPassword": "Passwort vergessen?",
+  "doNotAccount": "Haben Sie noch kein Konto? ",
+  "createAccount": "Jetzt registrieren",
+  "loginWith": "oder mit folgendem Konto anmelden",
+  "already_exist":"User bereits vorhanden",
+  "not_found":"Benutzer existiert nicht",
+  "incorrect_username_or_password": "Falscher Benutzername oder Passwort"
+
+
+  ,
+  "SignUp Strings": "===============>",
+  
+  "signUP": "Konto erstellen",
+  "signUpData": "Registrieren Sie sich kostenlos! Bitte geben Sie Ihre persönlichen Informationen ein",
+  "confirmPassword": "Passwort bestätigen",
+  "enterConfirmPassword": "Passwort bestätigen",
+  "alreadyAccount": "Sie haben bereits ein Konto ",
+  "Confirm_paassword_validation": "Passwort bestätigen ist erforderlich",
+  "length_validation": "Das Passwort muss mindestens 8 Zeichen lang sein",
+  "equal_validation": "Das Passwort muss mit dem Bestätigungspasswort übereinstimmen",
+  "passwrord_required": "Passwort ist erforderlich",
+  "email_required": "E-Mail ist erforderlich",
+  "invalid_email": "Ungültige E-Mail",
+  "accountExist": "Anmelden",
+  "skip": "Überspringen",
+  
+  "Email-Strings": "===============>",
+  "check_email": "Überprüfen Sie Ihre E-Mail-Adresse",
+  "send_email": "E-Mail senden",
+  "verify_email": "Überprüfen",
+  "email_sent": "Bitte überprüfen Sie Ihre E-Mail auf OTP",
+  "token_mismatch": "Ungültiges OTP",
+
+
+  "Forgot Password Strings": "===============>",
+  "old_password": "Altes Passwort",
+  "old_password_validate": "Altes Passwort eingeben",
+  "new_password": "Neues Passwort",
+  "new_password_validate": "Neues Passwort eingeben",
+  "Reset": "Passwort zurücksetzen",
+  "update_password": "Passwort aktualisieren",
+  
+
+
+
+
+  "Signup Details Strings": "================>",
+  "profile": "Profil",
+  "complete_profile": "Vervollständige dein Profil",
+  "complete": "Vollständig",
+  "login_details": "Anmelde- und Sicherheitsdetails",
+  "save_details": "Details speichern",
+
+  "Signup Details Screen1 Strings": "==============>",
+  "salutation": "Anrede",
+  "full_name": "Vollständiger Name",
+  "user_name": "Benutzername",
+  "birth_date": "Geburtsdatum",
+  "empty_validator": "Feld darf nicht leer sein",
+  "date_time_validator": "Wählen Sie das Geburtsdatum",
+
+  "Signup Details Screen2 Strings": "================>",
+  "phone_number": "Telefonnummer",
+  "phone_required": "Telefonnummer erforderlich",
+  "invalid_phone": "Ungültige Telefonnummer",
+  "check_phone": "Telefonnummer überprüfen",
+  "enter_otp": "OTP-Code eingeben",
+  "check_phone2": "Telefonnummer überprüfen für\t",
+  "resend_otp": "OTP Rrneut Senden",
+
+  "Signup Details Screen3 Strings": "================>",
+  "street_address": "Straßenadresse",
+  "street_validator": "Straßenadresse erforderlich",
+  "house_number": "Hausnummer",
+  "house_number_validator": "Hausnummer erforderlich",
+  "postcode": "Postleitzahl",
+  "postcode_validator": "Postleitzahl erforderlich",
+  "country": "Land",
+  "state": "Bundesland"
+
+}

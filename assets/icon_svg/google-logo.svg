@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_19409" data-name="Path 19409" d="M32.364,14.545H17.454v6.182h8.582c-.8,3.927-4.145,6.182-8.582,6.182A9.455,9.455,0,0,1,17.454,8a9.25,9.25,0,0,1,5.891,2.109L28,5.455a15.99,15.99,0,1,0-10.545,28c8,0,15.273-5.818,15.273-16A13.273,13.273,0,0,0,32.364,14.545Z"/>
+    </clipPath>
+  </defs>
+  <g id="google-logo" transform="translate(-4256 53)">
+    <circle id="Ellipse_136" data-name="Ellipse 136" cx="24" cy="24" r="24" transform="translate(4256 -53)" fill="#efefef"/>
+    <g id="google-icon" transform="translate(4262.545 -46.455)">
+      <g id="Group_39467" data-name="Group 39467" clip-path="url(#clip-path)">
+        <path id="Path_19408" data-name="Path 19408" d="M0,26.909V8l12.364,9.455Z" fill="#fbbc05"/>
+      </g>
+      <g id="Group_39468" data-name="Group 39468" clip-path="url(#clip-path)">
+        <path id="Path_19410" data-name="Path 19410" d="M0,8l12.364,9.455,5.091-4.436,17.454-2.836V0H0Z" fill="#ea4335"/>
+      </g>
+      <g id="Group_39469" data-name="Group 39469" clip-path="url(#clip-path)">
+        <path id="Path_19412" data-name="Path 19412" d="M0,26.909,21.818,10.182l5.745.727L34.909,0V34.909H0Z" fill="#34a853"/>
+      </g>
+      <g id="Group_39470" data-name="Group 39470" clip-path="url(#clip-path)">
+        <path id="Path_19414" data-name="Path 19414" d="M34.909,34.909,12.364,17.454,9.455,15.273,34.909,8Z" fill="#4285f4"/>
+      </g>
+    </g>
+  </g>
+</svg>
