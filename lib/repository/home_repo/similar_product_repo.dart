@@ -12,7 +12,6 @@ class SimilarProductRepo {
         '${AppUrl.categoryList}?_isPopular=true&size=$size&page=$page',
         null,
         false,
-        null,
       );
 
       return CategoryModel.fromJson(response);

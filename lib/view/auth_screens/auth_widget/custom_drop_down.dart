@@ -1,8 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:kaufes/utils/constants/colors.dart';
-import 'package:kaufes/view_model/auth_view_model/auth_view_model.dart';
 
+import '../../../view_model/auth_view_model/complete_signup_profil_view_model.dart';
+
+// ignore: must_be_immutable
 class CustomDropdown extends StatefulWidget {
   final List<String> items;
   final String title;
@@ -21,74 +23,66 @@ class CustomDropdown extends StatefulWidget {
   _CustomDropdownState createState() => _CustomDropdownState();
 }
 
-AuthViewModel authViewModel = AuthViewModel();
+SignUpProfileViewModel signUpProfileViewModel = SignUpProfileViewModel();
 
 class _CustomDropdownState extends State<CustomDropdown> {
   @override
-  void initState() {
-    super.initState();
-    authViewModel.dropdownValue =
-        widget.items[0]; // Default value: 'Select Gender'
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      Align(
-        alignment: Alignment.centerLeft,
-        child: Text(
-          widget.title,
-          style: MyTextStyles.medimBoldBlack,
-        ).tr(),
-      ),
-      const SizedBox(
-        height: 10,
-      ),
-      Container(
-        height:widget.height,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
-          border: Border.all(
-            color: AppColors.blackColor.withOpacity(0.5),
-          ),
+    return Builder(builder: (context) {
+      return Column(children: [
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Text(
+            widget.title,
+            style: MyTextStyles.medium16Black,
+          ).tr(),
         ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 15),
-          child: DropdownButtonHideUnderline(
-            child: DropdownButton<String>(
-              menuMaxHeight: 300,
-              borderRadius: BorderRadius.circular(20),
-              isExpanded: true,
-              value: authViewModel.dropdownValue,
-              icon: const Icon(
-                Icons.keyboard_arrow_down,
-                size: 25,
+      widget. title==""? const SizedBox(
+          height: 0,
+        ):const SizedBox(
+          height: 10,
+        ),
+        Container(
+          height: widget.height,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5),
+            border: Border.all(
+              color: AppColors.blackColor.withOpacity(0.5),
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            child: DropdownButtonHideUnderline(
+              child: DropdownButton<String>(
+                menuMaxHeight: 300,
+                borderRadius: BorderRadius.circular(20),
+                isExpanded: true,
+                value: signUpProfileViewModel.dropdownValue,
+                icon: const Icon(
+                  Icons.keyboard_arrow_down,
+                  size: 25,
+                  color: AppColors.blackColor,
+                ),
+                style: MyTextStyles.medium16Black50Op,
+                items: widget.items.map<DropdownMenuItem<String>>((itemValue) {
+                  return DropdownMenuItem<String>(
+                    value: itemValue,
+                    child: Text(
+                      itemValue,
+                      style: MyTextStyles.medium16Black,
+                    ),
+                  );
+                }).toList(),
+                onChanged: (String? newValue) {
+                  widget.onValueChanged(newValue!);
+                  signUpProfileViewModel.dropdownValue = newValue;
+                  setState(() {});
+                },
               ),
-              style: const TextStyle(
-                fontSize: 14,
-                color: Colors.black,
-                fontFamily: 'satoshiRegular',
-              ),
-              items: widget.items.map<DropdownMenuItem<String>>((itemValue) {
-                return DropdownMenuItem<String>(
-                  value: itemValue,
-                  child: Text(
-                    itemValue,
-                  ),
-                );
-              }).toList(),
-              onChanged: (String? newValue) {
-                // // setState(() {
-                // authViewModel.dropdownValue = newValue!;
-                // print(authViewModel.dropdownValue);
-                // // });
-                // // Pass the selected value back to the calling screen
-                widget.onValueChanged(newValue!);
-              },
             ),
           ),
         ),
-      ),
-    ]);
+      ]);
+    });
   }
 }

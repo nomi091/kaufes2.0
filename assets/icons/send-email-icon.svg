@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="send-email-icon" transform="translate(-24 -321)">
+    <rect id="Rectangle_1872" data-name="Rectangle 1872" width="40" height="40" transform="translate(24 321)" fill="none"/>
+    <g id="Group_42266" data-name="Group 42266" transform="translate(-1352 23826.355)">
+      <path id="error-message" d="M15.445,11.983,4.633,3.81a4.458,4.458,0,0,1,2.13-.56H26.457a4.439,4.439,0,0,1,2.13.56L17.8,11.963a2.037,2.037,0,0,1-2.358.02Zm.148,4.676a12.018,12.018,0,0,1,2.084-2,4.1,4.1,0,0,1-1.083.148,4.524,4.524,0,0,1-2.609-.837L2.857,5.548A4.439,4.439,0,0,0,2.25,7.763V20.892a4.511,4.511,0,0,0,4.513,4.513h6.22v-.033a11.785,11.785,0,0,1,2.609-8.714Zm8.025-4.316a10.31,10.31,0,0,1,1.231-.066A11.9,11.9,0,0,1,30.97,14V7.763a4.439,4.439,0,0,0-.607-2.216L20.27,13.179A11.661,11.661,0,0,1,23.618,12.342Z" transform="translate(1377.75 -23504.605)" fill="#68119a"/>
+      <circle id="Ellipse_343" data-name="Ellipse 343" cx="10" cy="10" r="10" transform="translate(1393 -23490)" fill="#18d9c5"/>
+      <g id="send" transform="translate(1396.178 -23485.432)">
+        <g id="Icon_00000145049271370995700300000003487412756501951400_" transform="translate(0 0)">
+          <path id="Path_20937" data-name="Path 20937" d="M8.694,3.459,4.683,6.244l-4.2-1.4A.714.714,0,0,1,.495,3.488L11.221.034a.714.714,0,0,1,.9.9L8.665,11.659a.714.714,0,0,1-1.357.007L5.9,7.45Z" transform="translate(0 0)" fill="#fff" fill-rule="evenodd"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

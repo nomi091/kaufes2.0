@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Kaufes-newsletters-icon" transform="translate(-24 -426)">
+    <rect id="Rectangle_1873" data-name="Rectangle 1873" width="40" height="40" transform="translate(24 426)" fill="none"/>
+    <g id="Group_42284" data-name="Group 42284" transform="translate(3 -2)">
+      <g id="newsletter_1_" data-name="newsletter (1)" transform="translate(24 430)">
+        <path id="Path_20920" data-name="Path 20920" d="M14.179,128l-2.468,1.532,2.468,1.287Zm0,0" transform="translate(-10.979 -120)" fill="#68119a"/>
+        <path id="Path_20921" data-name="Path 20921" d="M460.8,128v2.819l2.467-1.287Zm0,0" transform="translate(-432.001 -120)" fill="#68119a"/>
+        <path id="Path_20922" data-name="Path 20922" d="M16.371,183.432a.8.8,0,0,1-.741,0L0,175.277v17.045a.8.8,0,0,0,.8.8H31.2a.8.8,0,0,0,.8-.8V175.277Zm0,0" transform="translate(0 -164.322)" fill="#68119a"/>
+        <path id="Path_20923" data-name="Path 20923" d="M99.2,11.655V.8a.8.8,0,0,0-.8-.8H77.6a.8.8,0,0,0-.8.8V11.655L88,17.5ZM80.8,3.2H95.2a.8.8,0,0,1,0,1.6H80.8a.8.8,0,1,1,0-1.6Zm-.8,4a.8.8,0,0,1,.8-.8H95.2a.8.8,0,1,1,0,1.6H80.8a.8.8,0,0,1-.8-.8Zm3.2,3.2a.8.8,0,0,1,.8-.8h8a.8.8,0,1,1,0,1.6H84A.8.8,0,0,1,83.2,10.4Zm0,0" transform="translate(-72)" fill="#68119a"/>
+      </g>
+      <g id="Group_42283" data-name="Group 42283" transform="translate(-7 1)">
+        <circle id="Ellipse_345" data-name="Ellipse 345" cx="13" cy="13" r="13" transform="translate(39 439)" fill="#fff"/>
+        <g id="Group_42282" data-name="Group 42282" transform="translate(-5 -8)">
+          <circle id="Ellipse_344" data-name="Ellipse 344" cx="10" cy="10" r="10" transform="translate(47 450)" fill="#18d9c5"/>
+          <g id="megaphone" transform="translate(20.158 452.195)">
+            <g id="Group_42269" data-name="Group 42269" transform="translate(35.696 0.11)">
+              <g id="Group_42268" data-name="Group 42268">
+                <path id="Path_20924" data-name="Path 20924" d="M223.662,10.331l-5.968-5.969a.9.9,0,1,0-1.269,1.268l5.969,5.968a.9.9,0,1,0,1.268-1.268Z" transform="translate(-216.163 -4.1)" fill="#fff"/>
+              </g>
+            </g>
+            <g id="Group_42271" data-name="Group 42271" transform="translate(33.344 2.465)">
+              <g id="Group_42270" data-name="Group 42270">
+                <path id="Path_20925" data-name="Path 20925" d="M139.664,82.905l-.045.225a9.637,9.637,0,0,1-2.125,4.305l3.247,3.247a9.6,9.6,0,0,1,4.284-2.146l.226-.045Z" transform="translate(-137.494 -82.905)" fill="#fff"/>
+              </g>
+            </g>
+            <g id="Group_42273" data-name="Group 42273" transform="translate(30.136 7.667)">
+              <g id="Group_42272" data-name="Group 42272" transform="translate(0)">
+                <path id="Path_20926" data-name="Path 20926" d="M32.749,256.989l-2.219,2.219a1.345,1.345,0,0,0,0,1.9l1.268,1.268a1.345,1.345,0,0,0,1.9,0l2.219-2.219Zm.317,3.487a.448.448,0,0,1-.634-.634l.634-.634a.448.448,0,0,1,.634.634Z" transform="translate(-30.136 -256.989)" fill="#fff"/>
+              </g>
+            </g>
+            <g id="Group_42275" data-name="Group 42275" transform="translate(34.968 10.33)">
+              <g id="Group_42274" data-name="Group 42274">
+                <path id="Path_20927" data-name="Path 20927" d="M194.636,349.04l.61-.61a1.344,1.344,0,0,0,0-1.9l-.453-.453a8.5,8.5,0,0,0-.722.546l.541.542a.447.447,0,0,1,0,.633l-.62.62-.911-.883-1.268,1.268,2.034,1.971a.9.9,0,0,0,1.267-1.269Z" transform="translate(-191.813 -346.075)" fill="#fff"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

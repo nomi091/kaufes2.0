@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:kaufes/repository/home_repo/category_repo.dart';
 
 import '../../data/responce/api_responce.dart';
@@ -18,7 +17,7 @@ class CreateAdViewModel with ChangeNotifier {
   String videoName = "";
   String videoLink = "";
   TextEditingController phoneNoController = TextEditingController();
-  PhoneNumber? phoneNo=PhoneNumber(isoCode: 'DE');
+
   Future<void> selectMedia(ImageSource source) async {
     // images.clear();
     imagePath.clear();

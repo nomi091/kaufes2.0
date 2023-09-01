@@ -25,7 +25,7 @@ class _RadioButtonsDialogState extends State<RadioButtonsDialog> {
             groupValue: selectedOption,
             onChanged: (value) {
               setState(() {
-                selectedOption = value!;
+                selectedOption = value!.toString();
               });
               print(selectedOption);
             },
@@ -37,7 +37,7 @@ class _RadioButtonsDialogState extends State<RadioButtonsDialog> {
             groupValue: selectedOption,
             onChanged: (value) {
               setState(() {
-                selectedOption = value!;
+                selectedOption = value!.toString();
               });
               print(selectedOption);
             },
@@ -49,7 +49,7 @@ class _RadioButtonsDialogState extends State<RadioButtonsDialog> {
             groupValue: selectedOption,
             onChanged: (value) {
               setState(() {
-                selectedOption = value!;
+                selectedOption = value!.toString();
               });
               print(selectedOption);
             },

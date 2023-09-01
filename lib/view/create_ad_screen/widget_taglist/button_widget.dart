@@ -2,7 +2,7 @@
   import 'package:flutter/material.dart';
 import 'package:kaufes/utils/constants/constant_width.dart';
 
-import '../../../res/widgets/global_widgets/primary_button.dart';
+import '../../../widgets/global_widgets/primary_button.dart';
 import '../../../utils/constants/colors.dart';
 
 Widget buildNextButton({BuildContext? context,  Function? buttonPressed,}

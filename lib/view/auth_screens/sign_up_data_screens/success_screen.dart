@@ -53,7 +53,7 @@ class SuccessScreen extends StatelessWidget {
               buildCustomButton(
                   buttonPressed: () {
                     Navigator.pushNamedAndRemoveUntil(
-                        context, ScreenRoutes.homeScreen, (route) => false);
+                        context, ScreenRoutes.bottomNavBar, (route) => false);
                   },
                   title: 'Home Page',
                   context: context,

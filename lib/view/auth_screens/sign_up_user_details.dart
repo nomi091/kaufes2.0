@@ -1,16 +1,16 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:kaufes/res/widgets/global_widgets/align_left_text.dart';
-import 'package:kaufes/utils/constants/colors.dart';
-import 'package:kaufes/utils/constants/constant_width.dart';
-import 'package:kaufes/utils/routes/routes.dart';
 import 'package:kaufes/view/auth_screens/sign_up_data_screens/personal_details_screen1.dart';
 import 'package:kaufes/view/auth_screens/sign_up_data_screens/personal_details_screen2.dart';
 import 'package:kaufes/view/auth_screens/sign_up_data_screens/personal_details_screen3.dart';
-import 'package:kaufes/view_model/auth_view_model/auth_view_model.dart';
+import 'package:kaufes/widgets/global_widgets/align_left_text.dart';
+import 'package:kaufes/utils/constants/colors.dart';
+import 'package:kaufes/utils/constants/constant_width.dart';
+import 'package:kaufes/utils/routes/routes.dart';
 import 'package:provider/provider.dart';
 
-import '../../res/widgets/global_widgets/filter_app_bar.dart';
+import '../../view_model/auth_view_model/complete_signup_profil_view_model.dart';
+import '../../widgets/global_widgets/filter_app_bar.dart';
 import 'auth_widget/custom_button.dart';
 
 class DetailProgressScreen extends StatefulWidget {
@@ -56,47 +56,56 @@ class _DetailProgressScreenState extends State<DetailProgressScreen> {
   @override
   Widget build(BuildContext context) {
     double progressPercentage = calculateProgressPercentage();
-    void nextPage() {
-      if (_currentPage == _totalPages - 1 &&
-          _formKeys[_currentPage].currentState!.validate()) {
-        Navigator.pushNamed(context, ScreenRoutes.successScreen);
-      } else if (_currentPage < _totalPages - 1 &&
-          _formKeys[_currentPage].currentState!.validate()) {
-        _pageController.animateToPage(
-          _currentPage + 1,
-          duration: const Duration(milliseconds: 300),
-          curve: Curves.easeInOut,
-        );
+    void nextPage() async {
+      if (_formKeys[_currentPage].currentState!.validate()) {
+        if (_currentPage == 0) {
+          await context
+              .read<SignUpProfileViewModel>()
+              .completeProfileApi1(context);
+        } else if (_currentPage == 1) {
+          await context
+              .read<SignUpProfileViewModel>()
+              .completeProfileApi2(context);
+        } else if (_currentPage == 2) {
+          await context
+              .read<SignUpProfileViewModel>()
+              .completeProfileApi3(context);
+        } else {
+          _pageController.animateToPage(
+            _currentPage + 1,
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeInOut,
+          );
+        }
       }
     }
 
     return Scaffold(
-      appBar: FilterAppBar(
-        onTapTrailing: () {},
-        onTapBack: () {
-          Navigator.pushNamed(context, ScreenRoutes.logIn);
-        },
-        height: ConstantSize.getHeight(context) * 0.05,
-        title: 'profile'.tr(),
-        subTitle: '',
-        trailingCheck: false,
-      ),
-      body: Consumer<AuthViewModel>(builder: (context, language, child) {
-        return Consumer<AuthViewModel>(builder: (context, controller, child) {
-          return SingleChildScrollView(
-            child: WillPopScope(
-              onWillPop: () async {
-                Navigator.pushNamed(context, ScreenRoutes.logIn);
-                return true;
-              },
+        appBar: FilterAppBar(
+          onTapTrailing: () {},
+          onTapBack: () {
+            //  Navigator.pop(context);
+            Navigator.pushNamed(context, ScreenRoutes.detailProgressScreen);
+          },
+          height: ConstantSize.getHeight(context) * 0.05,
+          title: 'Back'.tr(),
+          subTitle: '',
+          trailingCheck: false,
+        ),
+        body: Consumer<SignUpProfileViewModel>(
+            builder: (context, controller, child) {
+          return WillPopScope(
+            onWillPop: () async {
+              Navigator.pushNamed(context, ScreenRoutes.logIn);
+              return true;
+            },
+            child: SingleChildScrollView(
               child: Padding(
                 padding: EdgeInsets.symmetric(
                   vertical: ConstantSize.getHeight(context) * 0.02,
                   horizontal: ConstantSize.getWidth(context) * 0.03,
                 ),
                 child: SizedBox(
-                  height: ConstantSize.getHeight(context) * 0.85,
-                  // width: ConstantSize.getWidth(context)*0.8,
                   child: Column(
                     children: [
                       Center(
@@ -105,72 +114,75 @@ class _DetailProgressScreenState extends State<DetailProgressScreen> {
                           style: MyTextStyles.regularNormalBlack,
                         ).tr(),
                       ),
-                      Expanded(
-                        child: Center(
-                          child: SizedBox(
-                            height: 10.0,
-                            child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                              itemCount: _totalPages,
-                              itemExtent: 135.0,
-                              itemBuilder: (context, index) {
-                                Color progressColor = index <= _currentPage
-                                    ? AppColors.primaryColor
-                                    : Colors.grey;
-                                return Row(
-                                  children: [
-                                    Container(
-                                      width:
-                                          ConstantSize.getWidth(context) * 0.25,
-                                      decoration: BoxDecoration(
-                                        color: progressColor,
-                                        borderRadius:
-                                            BorderRadius.circular(5.0),
-                                      ),
+                      SizedBox(
+                        height: ConstantSize.getScaleHeight(context) * 16,
+                      ),
+                      Center(
+                        child: SizedBox(
+                          height: 10.0,
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: _totalPages,
+                            // itemExtent: 123.0,
+                            itemBuilder: (context, index) {
+                              Color progressColor = index <= _currentPage
+                                  ? AppColors.primaryColor
+                                  : Colors.grey;
+                              return Row(
+                                children: [
+                                  Container(
+                                    width:
+                                        ConstantSize.getWidth(context) * 0.28,
+                                    decoration: BoxDecoration(
+                                      color: progressColor,
+                                      borderRadius: BorderRadius.circular(5.0),
                                     ),
-                                    SizedBox(
-                                      width:
-                                          ConstantSize.getWidth(context) * 0.03,
-                                    ),
-                                  ],
-                                );
-                              },
-                            ),
+                                  ),
+                                  SizedBox(
+                                    width:
+                                        ConstantSize.getWidth(context) * 0.045,
+                                  ),
+                                ],
+                              );
+                            },
                           ),
                         ),
+                      ),
+                      SizedBox(
+                        height: ConstantSize.getScaleHeight(context) * 25,
                       ),
                       Row(
                         children: [
                           alignCenterLeft(
                             Text(
                               '${progressPercentage.toStringAsFixed(0)}%\t',
-                              style: const TextStyle(fontSize: 20),
+                              style: MyTextStyles.biggerFont24BlackMdeium,
                             ),
                           ),
                           alignCenterLeft(
                             Text(
                               'complete'.tr(),
-                              style: MyTextStyles.detailCardNormalBlack,
+                              style: MyTextStyles.regular16Gray,
                             ).tr(),
                           ),
                         ],
                       ),
                       SizedBox(
-                        height: ConstantSize.getHeight(context) * 0.02,
+                        height: ConstantSize.getScaleHeight(context) * 16,
                       ),
                       alignCenterLeft(
                         Text(
-                          'login_details',
-                          style: MyTextStyles.regularDetailBoldBlack,
+                          'personal_details',
+                          style: MyTextStyles.regular16Black,
                         ).tr(),
                       ),
                       SizedBox(
-                        height: ConstantSize.getHeight(context) * 0.02,
+                        height: ConstantSize.getScaleHeight(context) * 24,
                       ),
-                      Expanded(
-                        flex: 14,
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.5,
                         child: PageView(
-                            // physics: const NeverScrollableScrollPhysics(),
+                            physics: const NeverScrollableScrollPhysics(),
                             controller: _pageController,
                             onPageChanged: (index) {
                               setState(() {
@@ -189,29 +201,66 @@ class _DetailProgressScreenState extends State<DetailProgressScreen> {
                                   child: const DetailProgressScreen3()),
                             ]),
                       ),
-                      buildCustomButton(
-                          context: context,
-                          title: 'save_details'.tr(),
-                          buttonPressed: nextPage,
-                          isLoading: false),
-                      SizedBox(height: ConstantSize.getHeight(context) * 0.02),
-                      buildCustomButton2(
-                          context: context,
-                          isLoading: false,
-                          title: 'skip'.tr(),
-                          buttonPressed: () {
-                            Navigator.pushNamed(
-                                context, ScreenRoutes.bottomNavBar);
-                            controller.nextScreen();
-                          }),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          buildCustomButton(
+                              context: context,
+                              title: 'submit'.tr(),
+                              buttonPressed: () async {
+                                if (_formKeys[_currentPage]
+                                    .currentState!
+                                    .validate()) {
+                                  if (_currentPage == 0) {
+                                    await context
+                                        .read<SignUpProfileViewModel>()
+                                        .completeProfileApi1(context);
+                                  } else if (_currentPage == 1) {
+                                    await context
+                                        .read<SignUpProfileViewModel>()
+                                        .completeProfileApi2(context);
+                                  } else if (_currentPage == 2) {
+                                    await context
+                                        .read<SignUpProfileViewModel>()
+                                        .completeProfileApi3(context);
+                                  }
+                                  if (_currentPage == _totalPages - 1) {
+                                  } else if (controller.validate) {
+                                    _pageController.animateToPage(
+                                      _currentPage + 1,
+                                      duration:
+                                          const Duration(milliseconds: 300),
+                                      curve: Curves.easeInOut,
+                                    );
+                                  } else {
+                                    print('validation error');
+                                  }
+                                }
+                              },
+                              isLoading: false),
+                          SizedBox(
+                            height: ConstantSize.getScaleHeight(context) * 15,
+                          ),
+                          buildCustomButton2(
+                              context: context,
+                              isLoading: false,
+                              title: 'skip'.tr(),
+                              buttonPressed: () {
+                                Navigator.pushNamed(
+                                    context, ScreenRoutes.bottomNavBar);
+                              }),
+                        ],
+                      )
+
+                      // const SizedBox(
+                      //   height: 20,
+                      // ),
                     ],
                   ),
                 ),
               ),
             ),
           );
-        });
-      }),
-    );
+        }));
   }
 }

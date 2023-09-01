@@ -1,8 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:kaufes/res/provider/providers.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:kaufes/service/providers.dart';
 import 'package:kaufes/utils/routes/routes.dart';
 import 'package:provider/provider.dart';
 
@@ -22,7 +22,7 @@ Future<void> main() async {
       supportedLocales: const [Locale('en', 'US'), Locale('de', 'DE')],
       path: "assets/translations",
       saveLocale: true,
-      fallbackLocale: const Locale('en', 'US'),
+      fallbackLocale: const Locale('de', 'DE'),
       child: const MyApp(),
     ),
   );

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="facebook_app_id">898431498260472</string>
+  <string name="fb_login_protocol_scheme">fb3037792109858169</string>
+  <string name="facebook_client_token">99dabaed08a7dffe1ae64f8856d2ab5c</string>
+  <string name="app_name">Kaufes</string>
+</resources>

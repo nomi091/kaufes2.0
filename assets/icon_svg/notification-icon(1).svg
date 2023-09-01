@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <g id="notification-icon" transform="translate(3083 -9064)">
-    <rect id="Rectangle_1275" data-name="Rectangle 1275" width="24" height="24" transform="translate(-3083 9064)" fill="none"/>
-    <g id="Icon_ionic-ios-notifications" data-name="Icon ionic-ios-notifications" transform="translate(-3084.761 9063.069)">
-      <path id="Path_19492" data-name="Path 19492" d="M16.839,30.794a2.186,2.186,0,0,0,2.231-2.458H14.6A2.187,2.187,0,0,0,16.839,30.794Z" transform="translate(-2.67 -8.309)" fill="#272727"/>
-      <path id="Path_19493" data-name="Path 19493" d="M21.408,17.671c-.714-.941-2.119-1.493-2.119-5.709,0-4.327-1.911-6.066-3.691-6.483-.167-.042-.288-.1-.288-.274V5.071a1.132,1.132,0,1,0-2.263,0v.134c0,.172-.121.232-.288.274-1.785.422-3.691,2.156-3.691,6.483,0,4.215-1.405,4.763-2.119,5.709a.921.921,0,0,0,.737,1.475H20.675A.921.921,0,0,0,21.408,17.671Z" transform="translate(0 0)" fill="#272727"/>
-    </g>
-  </g>
-</svg>

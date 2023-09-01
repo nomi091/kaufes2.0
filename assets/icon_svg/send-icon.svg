@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-  <g id="send-icon" transform="translate(-1185.237 -968.891)">
-    <circle id="Bg" cx="16" cy="16" r="16" transform="translate(1185.237 968.891)" fill="#68119a"/>
-    <g id="Icon_-_Send" data-name="Icon - Send" transform="translate(1193.602 975.749)">
-      <rect id="Icon_-_Send-2" data-name="Icon - Send" width="18.286" height="18.286" fill="none"/>
-      <path id="Vector" d="M14.214,6.812a1.524,1.524,0,0,1-.869,1.379L2.183,13.478a1.585,1.585,0,0,1-.663.19A1.524,1.524,0,0,1,.134,11.52L1.871,7.574H6.092a.762.762,0,1,0,0-1.524H1.871L.134,2.141a1.524,1.524,0,0,1,2.042-2h0L13.338,5.433a1.524,1.524,0,0,1,.876,1.379Z" transform="translate(2.289 2.331)" fill="#fff"/>
-    </g>
-  </g>
-</svg>

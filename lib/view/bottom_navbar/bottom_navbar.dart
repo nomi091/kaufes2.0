@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:kaufes/utils/constants/constant_width.dart';
 import 'package:kaufes/utils/routes/routes.dart';
-import 'package:kaufes/view/home_screens/home_screen.dart';
 
-import '../../service/hive_service.dart';
 import '../../utils/constants/colors.dart';
+import '../../utils/constants/constant_width.dart';
+import '../account_screens/account_setting.dart';
 import '../my_ads_screen/my_ads_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -40,23 +39,23 @@ class _BottomNavBarState extends State<BottomNavBar> {
           child: SizedBox(
             height: kBottomNavigationBarHeight,
             child: Row(
-              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                SizedBox(
-                  width: ConstantSize.getWidth(context) * 0.05,
-                ),
+                // SizedBox(
+                //   width: ConstantSize.getWidth(context) * 0.02,
+                // ),
                 _buildNavItem(0, CupertinoIcons.home, 'Home'),
                 SizedBox(
-                  width: ConstantSize.getWidth(context) * 0.1,
+                  width: ConstantSize.getWidth(context) * 0.01,
                 ),
                 _buildNavItem(1, CupertinoIcons.chat_bubble, 'Chat'),
                 SizedBox(
-                  width: ConstantSize.getWidth(context) * 0.25,
+                  width: ConstantSize.getWidth(context) * 0.12,
                 ),
                 _buildNavItem(3, Icons.add_chart, 'My Ads'),
-                SizedBox(
-                  width: ConstantSize.getWidth(context) * 0.1,
-                ),
+                // SizedBox(
+                //   width: ConstantSize.getWidth(context) * 0.1,
+                // ),
                 _buildNavItem(4, CupertinoIcons.person, 'Account'),
               ],
             ),
@@ -116,7 +115,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget _buildPage(int index) {
     switch (index) {
       case 0:
-        return const HomeScreen();
+        return const AccountScreen();
       case 1:
         return Center(
           child: Text(
@@ -130,15 +129,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
         return const MyAdsScreen();
 
       case 4:
-        return InkWell(
-          onTap: () async {
-               await HiveService.signOut();
-            Navigator.pushNamed(context, ScreenRoutes.onbroding);
-          },
-          child: const Center(
-            child: Text('Profile'),
-          ),
-        );
+        return const AccountScreen();
+
       default:
         return Container();
     }

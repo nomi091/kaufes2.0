@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:kaufes/utils/constants/colors.dart';
 import 'package:kaufes/view/create_ad_screen/widget_taglist/button_widget.dart';
 import 'package:kaufes/view/create_ad_screen/widget_taglist/custom_switch.dart';
 import 'package:kaufes/view_model/create_ad_view_model/creat_view_model.dart';
 
-import '../../res/widgets/global_widgets/align_left_text.dart';
-import '../../res/widgets/global_widgets/custom_text_form_field.dart';
-import '../../res/widgets/global_widgets/filter_app_bar.dart';
+import '../../widgets/global_widgets/align_left_text.dart';
+import '../../widgets/global_widgets/custom_text_form_field.dart';
+import '../../widgets/global_widgets/filter_app_bar.dart';
 import '../../utils/constants/constant_width.dart';
 import '../../utils/routes/routes.dart';
 
@@ -263,30 +262,6 @@ class _AdsReviewContactScreenState extends State<AdsReviewContactScreen> {
                           ),
                           SizedBox(
                             height: ConstantSize.getHeight(context) * 0.01,
-                          ),
-                          InternationalPhoneNumberInput(
-                            initialValue: createAdViewModel.phoneNo,
-                            textFieldController:
-                                createAdViewModel.phoneNoController,
-                            countrySelectorScrollControlled: true,
-                            inputDecoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(5.0),
-                              ),
-                              focusedBorder: const OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: AppColors.primaryColor),
-                              ),
-                              contentPadding: const EdgeInsets.symmetric(
-                                  vertical: 10.0,
-                                  horizontal:
-                                      10.0), // Adjust the values to decrease the size
-                            ),
-                            keyboardType: TextInputType.phone,
-                            onInputChanged: (PhoneNumber value) {},
-                            selectorConfig: const SelectorConfig(
-                              selectorType: PhoneInputSelectorType.DROPDOWN,
-                            ),
                           ),
                           SizedBox(
                             height: ConstantSize.getHeight(context) * 0.3,

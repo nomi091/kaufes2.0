@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:kaufes/utils/constants/colors.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../../../res/widgets/global_widgets/align_left_text.dart';
+import '../../../widgets/global_widgets/align_left_text.dart';
 
 class CategoryItemWidget extends StatefulWidget {
   const CategoryItemWidget({super.key,});

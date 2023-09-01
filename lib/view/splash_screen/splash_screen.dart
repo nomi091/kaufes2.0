@@ -5,6 +5,7 @@ import 'package:kaufes/view_model/auth_view_model/auth_view_model.dart';
 
 import '../../utils/constants/circular_progress_indecator.dart';
 import '../../utils/constants/image_paths.dart';
+import '../../utils/routes/routes.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -31,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Stack(
         children: [
           Positioned.fill(
-            child: SvgPicture.asset(
+            child: Image.asset(
               AppImages.otherSplashImage,
               fit: BoxFit.cover,
             ),
@@ -42,8 +43,8 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    AppImages.splashScreenLogo,
+                  SvgPicture.asset(
+                    AppImages.spalashLogo,
                   ),
                   SizedBox(height: ConstantSize.getHeight(context) * 0.06),
                   const CustomCicularProgressIndecator(),
@@ -57,7 +58,9 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigateToNextScreen() {
-    Future.delayed(const Duration(seconds: 4));
-    authViewModel.checkVerificationStatus(context);
+    // Future.delayed(const Duration(seconds: 3)).then((value) {
+    //   authViewModel.checkVerificationStatus(context);
+    // });
+    Navigator.pushNamed(context, ScreenRoutes.bottomNavBar);
   }
 }

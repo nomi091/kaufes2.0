@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="blogs-icon" transform="translate(-24 -955)">
+    <rect id="Rectangle_1858" data-name="Rectangle 1858" width="24" height="24" transform="translate(24 955)" fill="none"/>
+    <g id="Icon" transform="translate(24.75 955.75)">
+      <path id="Path_20878" data-name="Path 20878" d="M20.524,4.764v13.12A3.514,3.514,0,0,1,17.01,21.4H5.764A3.514,3.514,0,0,1,2.25,17.884V4.764A3.514,3.514,0,0,1,5.764,1.25H17.01A3.514,3.514,0,0,1,20.524,4.764Zm-1.406,0A2.108,2.108,0,0,0,17.01,2.656H5.764A2.108,2.108,0,0,0,3.656,4.764v13.12a2.108,2.108,0,0,0,2.109,2.109H17.01a2.108,2.108,0,0,0,2.109-2.109Z" fill="#616161" fill-rule="evenodd"/>
+      <path id="Path_20879" data-name="Path 20879" d="M11.639,5.25a.7.7,0,0,1,0,1.406H6.953a.7.7,0,0,1,0-1.406Z" transform="translate(-0.251 -0.251)" fill="#616161" fill-rule="evenodd"/>
+      <path id="Path_20880" data-name="Path 20880" d="M16.324,9.25a.7.7,0,0,1,0,1.406H6.953a.7.7,0,1,1,0-1.406Z" transform="translate(-0.251 -0.503)" fill="#616161" fill-rule="evenodd"/>
+      <path id="Path_20881" data-name="Path 20881" d="M16.324,13.25a.7.7,0,0,1,0,1.406H6.953a.7.7,0,1,1,0-1.406Z" transform="translate(-0.251 -0.754)" fill="#616161" fill-rule="evenodd"/>
+      <path id="Path_20882" data-name="Path 20882" d="M16.324,17.25a.7.7,0,0,1,0,1.406H6.953a.7.7,0,1,1,0-1.406Z" transform="translate(-0.251 -1.006)" fill="#616161" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

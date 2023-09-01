@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kaufes/utils/routes/routes.dart';
 import 'package:kaufes/view/create_ad_screen/widget_taglist/button_widget.dart';
-import '../../res/widgets/global_widgets/align_left_text.dart';
-import '../../res/widgets/global_widgets/filter_app_bar.dart';
+import '../../widgets/global_widgets/align_left_text.dart';
+import '../../widgets/global_widgets/filter_app_bar.dart';
 import '../../utils/constants/colors.dart';
 import '../../view_model/create_ad_view_model/creat_view_model.dart';
 

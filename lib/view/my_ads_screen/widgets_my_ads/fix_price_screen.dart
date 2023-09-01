@@ -34,7 +34,7 @@ class _FixPriceScreenState extends State<FixPriceScreen> {
               final isActive = index == myAdsViewModel.selectedIndex;
               // print(isActive);
               return Container(
-                padding: const EdgeInsets.all(2.0),
+                padding: const EdgeInsets.all(2.0),  
                 width: ConstantSize.getWidth(context) * 0.26,
                 child: StatusButton(
                   title: myAdsViewModel.statusList[index],

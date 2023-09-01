@@ -1,4 +1,8 @@
+import 'package:flutter/foundation.dart';
+
 import '../data/network/network-api_responce.dart';
+import '../model/auth_model/error_model.dart';
+import '../model/auth_model/success_model.dart';
 import '../utils/constants/app_url.dart';
 
 class AuthRepsitory {
@@ -11,10 +15,17 @@ class AuthRepsitory {
         AppUrl.signInEndPointEndPoint,
         data,
         false,
-        null,
       );
-
-      return response;
+      if (kDebugMode) {
+        print(response);
+      }
+      if (response['code'] == 422) {
+        ErrorModel errorModel = ErrorModel.fromJson(response);
+        return errorModel;
+      } else {
+        SuccessModel successModel = SuccessModel.fromJson(response);
+        return successModel;
+      }
     } catch (e) {
       rethrow;
     }
@@ -28,79 +39,105 @@ class AuthRepsitory {
         AppUrl.signUpEndPoint,
         data,
         false,
-        null,
       );
-
-      return response;
+      if (kDebugMode) {
+        print('Responce from server========> $response');
+      }
+      if (response['code'] == 422) {
+        ErrorModel errorModel = ErrorModel.fromJson(response);
+        return errorModel;
+      } else {
+        SuccessModel successModel = SuccessModel.fromJson(response);
+        return successModel;
+      }
     } catch (e) {
       rethrow;
     }
   }
 
-  Future<dynamic> sendOtp(
-    dynamic data,
-  ) async {
+  Future<dynamic> completeProfileApi(dynamic data, var page) async {
     try {
-      dynamic response = await _apiService.postApiResponse(
-        AppUrl.sendOtpOnEmailEndPoint,
+      dynamic response = await _apiService.putApiResponse(
+        '${AppUrl.completeProfileEndPointEndPoint}/$page',
         data,
-        false,
-        null,
+        true,
       );
-
-      return response;
+      if (kDebugMode) {
+        print('Responce from server========> $response');
+        print('Responce from server========> $response');
+      }
+      if (response['code'] == 422) {
+        ErrorModel errorModel = ErrorModel.fromJson(response);
+        return errorModel;
+      } else {
+        SuccessModel successModel = SuccessModel.fromJson(response);
+        return successModel;
+      }
     } catch (e) {
       rethrow;
     }
   }
-  Future<dynamic> sendForgotEmail(
+
+  // Future<dynamic> sendOtp(
+  //   dynamic data,
+  // ) async {
+  //   try {
+  //     dynamic response = await _apiService.postApiResponse(
+  //       AppUrl.sendOtpOnEmailEndPoint,
+  //       data,
+  //       false,
+  //     );
+  //     return response;
+  //   } catch (e) {
+  //     rethrow;
+  //   }
+  // }
+  // Future<dynamic> verifyEmailOtp(
+  //   dynamic data,
+  // ) async {
+  //   try {
+  //     dynamic response = await _apiService.postApiResponse(
+  //       AppUrl.verifyEmailEndPoint,
+  //       data,
+  //       false,
+  //     );
+  //     return response;
+  //   } catch (e) {
+  //     rethrow;
+  //   }
+  // }
+  Future<dynamic> sendForgotPassword(
     dynamic data,
   ) async {
-    
     try {
       dynamic response = await _apiService.postApiResponse(
         AppUrl.verifyAccountEmailApi,
         data,
         false,
-        null,
       );
-
+      // print(response);
       return response;
     } catch (e) {
       rethrow;
     }
   }
-  Future<dynamic> verifyEmailOtp(
-    dynamic data,
-  ) async {
+
+  Future<dynamic> socialAuthApi(dynamic data, String provider) async {
     try {
       dynamic response = await _apiService.postApiResponse(
-        AppUrl.verifyEmailEndPoint,
+        '${AppUrl.socialLoginEndPoint}/$provider',
         data,
         false,
-        null,
       );
-
-      return response;
+      if (response['code'] == 422) {
+        ErrorModel errorModel = ErrorModel.fromJson(response);
+        return errorModel;
+      } else {
+        SuccessModel successModel = SuccessModel.fromJson(response);
+        return successModel;
+      }
     } catch (e) {
       rethrow;
     }
   }
-   Future<dynamic> socialAuthApi(
-    dynamic data,
-  ) async {
-    try {
-      dynamic response = await _apiService.postApiResponse(
-        AppUrl.socialLoginEndPoint,
-        data,
-        false,
-        null,
-      );
-     print(response);
-      return response;
-    } catch (e) {
-      rethrow;
-    }
-  }
-
 }

@@ -1,9 +1,8 @@
 
   import 'package:flutter/material.dart';
 import 'package:kaufes/utils/constants/constant_width.dart';
-import 'package:kaufes/view/home_screens/notifications_screen/notfications.dart';
 
-import '../../../res/widgets/global_widgets/primary_button.dart';
+import '../../../widgets/global_widgets/primary_button.dart';
 import '../../../utils/constants/colors.dart';
 
 Widget buildCustomButton({BuildContext? context,  Function? buttonPressed,title,isLoading}
@@ -13,12 +12,12 @@ Widget buildCustomButton({BuildContext? context,  Function? buttonPressed,title,
       child: BtnPrimeryBackground(
         onPressed:buttonPressed as void Function(),
         title: title,
-        borderRadiusCircular: 5,
+        borderRadiusCircular: 8,
         borderSideWidth: 1,
         isLoading: isLoading,
         textStyle: MyTextStyles.headingxSmallBoldWhite,
-        height: ConstantSize.getHeight(context!) * 0.05,
-        width:  ConstantSize.getWidth(context)  * 0.9,
+        height: ConstantSize.getScaleHeight(context!) * 48,
+        width:  ConstantSize.getWidth(context)  * 1,
         backgroundColor: AppColors.primaryColor,
         borderColor: AppColors.primaryColor,
       ),
@@ -31,12 +30,12 @@ Widget buildCustomButton({BuildContext? context,  Function? buttonPressed,title,
       child: BtnPrimeryBackground(
         onPressed:buttonPressed as void Function(),
         title: title,
-        borderRadiusCircular: 5,
+        borderRadiusCircular: 8,
         isLoading: isLoading,
         borderSideWidth: 1,
         textStyle: MyTextStyles.boldDetailGrey,
-        height: ConstantSize.getHeight(context!) * 0.05,
-        width:  ConstantSize.getWidth(context)  * 0.9,
+        height: ConstantSize.getScaleHeight(context!) * 48,
+        width:  ConstantSize.getWidth(context)  * 1,
         backgroundColor: AppColors.whiteColor,
         borderColor: AppColors.blackColor.withOpacity(0.3),
       ),

@@ -1,13 +1,13 @@
 // File: filter_screen.dart
 
 import 'package:flutter/material.dart';
-import 'package:kaufes/res/widgets/global_widgets/align_left_text.dart';
+import 'package:kaufes/widgets/global_widgets/align_left_text.dart';
 import 'package:kaufes/utils/constants/constant_width.dart';
 import 'package:kaufes/utils/routes/routes.dart';
-import '../../../res/widgets/global_widgets/category_Filter_widget.dart';
-import '../../../res/widgets/global_widgets/custom_text_form_field.dart';
-import '../../../res/widgets/global_widgets/filter_app_bar.dart';
-import '../../../res/widgets/global_widgets/primary_button.dart';
+import '../../../widgets/global_widgets/category_Filter_widget.dart';
+import '../../../widgets/global_widgets/custom_text_form_field.dart';
+import '../../../widgets/global_widgets/filter_app_bar.dart';
+import '../../../widgets/global_widgets/primary_button.dart';
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/strings.dart';
 

@@ -4,7 +4,7 @@ import 'package:kaufes/utils/routes/routes.dart';
 import 'package:provider/provider.dart';
 
 import '../../../data/responce/status.dart';
-import '../../../res/widgets/global_widgets/filter_app_bar.dart';
+import '../../../widgets/global_widgets/filter_app_bar.dart';
 import '../../../view_model/home_view_model/category_view_model.dart';
 import '../../global_cards/category_list_card.dart';
 

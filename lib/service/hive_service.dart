@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hive/hive.dart';
 
+import '../model/auth_model/success_model.dart';
 import 'hive_utils.dart';
 
 class HiveService {
@@ -12,11 +15,12 @@ class HiveService {
     return await Hive.openBox(userLoginDetails);
   }
 
-  static Future<void> saveUserInfo(var user) async {
+  static Future<void> saveUserInfo(User user) async {
     Box box = await instance.box;
-    box.put(userDetails, user);
+    String userJson = jsonEncode(user.toJson()); // Convert user to JSON string
+    box.put(userDetails, userJson);
     if (kDebugMode) {
-      print("save ${await box.get(userDetails)}");
+      print("Saved: $userJson");
     }
   }
 
@@ -49,25 +53,26 @@ class HiveService {
   static Future getUserProfile() async {
     Box box = await instance.box;
     var userprofile = await box.get(userDetails);
-    return userprofile;
+    Map<String, dynamic> userMap = jsonDecode(userprofile);
+    User user = User.fromJson(userMap);
+    return user;
   }
 
 //verification
   static Future<String> checkVerificationStatus() async {
     Box box = await instance.box;
-    var userInfo = await box.get(userDetails);
-    if (userInfo == null) {
-      return '';
+    var userJson = box.get(userDetails);
+    print(userJson);
+    if (userJson == null) return '';
+    Map<String, dynamic> userMap = jsonDecode(userJson);
+    User user = User.fromJson(userMap);
+    print(user.email);
+    if (user.isEmailVerified == false) {
+      return 'Email Unverified';
+    } else if (user.isProfileComplete == false) {
+      return 'Profile Incomplete';
     } else {
-      if (userInfo["isEmailVerified"] == false) {
-        return 'Email Unverified';
-      } else if (userInfo["isProfileComplete"] == false) {
-        return 'Profile Incomplete';
-      } else if (userInfo["isPhoneVerified"] == false) {
-        return 'Phone Unverified';
-      } else {
-        return 'Verified';
-      }
+      return 'Verified';
     }
   }
 

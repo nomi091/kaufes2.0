@@ -9,5 +9,11 @@ class ConstantSize {
     return MediaQuery.of(context).size.height;
   }
 
-  
+  static double getScaleHeight(BuildContext context) {
+    return MediaQuery.of(context).textScaleFactor;
+  }
+
+  static double getScaleWidth(BuildContext context) {
+    return MediaQuery.of(context).textScaleFactor;
+  }
 }

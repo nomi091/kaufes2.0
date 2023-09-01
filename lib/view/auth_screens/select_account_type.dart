@@ -1,10 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kaufes/utils/constants/colors.dart';
 
-import '../../res/widgets/auth_widgets/onboarding_screen.dart';
-import '../../res/widgets/global_widgets/primary_button.dart';
+import '../../widgets/auth_widgets/onboarding_screen.dart';
+import '../../widgets/global_widgets/primary_button.dart';
 import '../../utils/constants/constant_width.dart';
 import '../../utils/constants/image_paths.dart';
 import '../../utils/routes/routes.dart';
@@ -18,8 +17,8 @@ class OnboardingScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Stack(
           children: [
-            SvgPicture.asset(
-              AppImages.svgOnBordingScreen,
+            Image.asset(
+              AppImages.welcomeBgScreen,
               fit: BoxFit.cover,
             ),
             Padding(
@@ -28,27 +27,30 @@ class OnboardingScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(
-                      top: ConstantSize.getHeight(context) * 0.07,
+                      top: ConstantSize.getHeight(context) * 0.08,
                     ),
-                    child: SvgPicture.asset(
-                      AppImages.svgOnBordingWelcomeLogo,
+                    child: Image.asset(
+                      //width:200,
+                      AppImages.accounTypeLogo,
+                      height: 50,
+                      
                     ),
                   ),
                   SizedBox(height: ConstantSize.getHeight(context) * 0.025),
                   OnboardingScreenData(
-                    image: AppImages.svgOnBordingDealIcon,
+                    image: AppImages.dealIcon,
                     title: 'find_best_deals'.tr(),
                     subTitle: 'dummy_text'.tr(),
                   ),
                   SizedBox(height: ConstantSize.getHeight(context) * 0.025),
                   OnboardingScreenData(
-                    image: AppImages.svgOnBordingSellStuffIcon,
+                    image: AppImages.sellStuffIcon,
                     title: 'sell_stuff'.tr(),
                     subTitle: 'dummy_text'.tr(),
                   ),
                   SizedBox(height: ConstantSize.getHeight(context) * 0.025),
                   OnboardingScreenData(
-                    image: AppImages.svgOnBordingTrustedIcon,
+                    image: AppImages.trustedIcon,
                     title: "trusted_platform".tr(),
                     subTitle: 'dummy_text'.tr(),
                   ),

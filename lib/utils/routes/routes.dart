@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:kaufes/view/home_screens/all_categories_list_screen/all_categories_list.dart';
 import 'package:kaufes/view/home_screens/all_sub_categories_list_screen/subcategories_list.dart';
-import 'package:kaufes/view/home_screens/home_screen.dart';
-
+import '../../view/account_screens/account_screen_widgets/custom_dialouge.dart';
+import '../../view/account_screens/address_details_screens/address_details_screen.dart';
+import '../../view/account_screens/commercial_screen/commercial_screen1.dart';
+import '../../view/account_screens/commercial_screen/commercial_screen2.dart';
+import '../../view/account_screens/help_support_screen/help_support.dart';
+import '../../view/account_screens/help_support_screen/submit_request_screen.dart/submit_request.dart';
+import '../../view/account_screens/language_screen/language_screen.dart';
+import '../../view/account_screens/login_security_screen/login_security.dart';
+import '../../view/account_screens/notification_screen/notification.dart';
+import '../../view/account_screens/notification_screen/second_notification_screen.dart';
+import '../../view/account_screens/notification_screen/togle_notifications.dart';
+import '../../view/account_screens/prersonal_details_screens/personal_details_screen.dart';
 import '../../view/auth_screens/forgot_password/email_confirmation.dart';
 import '../../view/auth_screens/forgot_password/reset_password_screen.dart';
 import '../../view/auth_screens/forgot_password/verify_account_screen.dart';
@@ -15,13 +25,8 @@ import '../../view/bottom_navbar/bottom_navbar.dart';
 import '../../view/create_ad_screen/ads_contact_screen.dart';
 import '../../view/create_ad_screen/ads_detail_screen.dart';
 import '../../view/create_ad_screen/ads_location_Screen.dart';
-import '../../view/create_ad_screen/ads_media_screen.dart';
 import '../../view/create_ad_screen/ads_pricing_screen.dart';
-import '../../view/home_screens/favourite_screen/favourite_screen.dart';
-import '../../view/home_screens/filter_screen/filter_home_screen.dart';
 import '../../view/home_screens/filter_screen/filter_page.dart';
-import '../../view/home_screens/notifications_screen/notfications.dart';
-import '../../view/global_cards/product_detail_screen.dart';
 import '../../view/splash_screen/splash_screen.dart';
 import 'custom_page_route.dart';
 
@@ -50,6 +55,18 @@ class ScreenRoutes {
   static const String verifyScreen = "verifyScreen";
   static const String successScreen = "successScreen";
   static const String resetPasswordScreen = "resetPasswordScreen";
+  static const String commercialScreen1 = "commercialScreen1";
+  static const String commercialScreen2 = "commercialScreen2";
+  static const String personalDetailsScreen = "personalDetailsScreen";
+  static const String loginSecurityScreen = "loginSecurityScreen";
+  static const String addressDetailsScreen = "addressDetailsScreen";
+  static const String notificationScreen = "notificationScreen";
+  static const String secondNotificationScreen = "secondNotificationScreen";
+  static const String togleNotficationsScreen = "togleNotficationsScreen";
+  static const String languageScreen = "languageScreen";
+  static const String helpSupportScreen = "helpSupportScreen";
+  static const String submitRequestScreen = "submitRequestScreen";
+  static const String customDialougeScreen = "customDialougeScreen";
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -76,22 +93,22 @@ class ScreenRoutes {
         return CustomPageRoute(
           child: const BottomNavBar(),
         );
-      case homeScreen:
-        return CustomPageRoute(
-          child: const HomeScreen(),
-        );
-      case productDetailScreen:
-        return CustomPageRoute(
-          child: const ProductDetails(),
-        );
-      case notificationsScreen:
-        return CustomPageRoute(
-          child: const InAppNotificationScreen(),
-        );
-      case favouriteScreen:
-        return CustomPageRoute(
-          child: const FavoriteScreen(),
-        );
+      // case homeScreen:
+      //   return CustomPageRoute(
+      //     child: const HomeScreen(),
+      //   );
+      // case productDetailScreen:
+      //   return CustomPageRoute(
+      //     child: const ProductDetails(),
+      //   );
+      // case notificationsScreen:
+      //   return CustomPageRoute(
+      //     child: const InAppNotificationScreen(),
+      //   );
+      // case favouriteScreen:
+      //   return CustomPageRoute(
+      //     child: const FavoriteScreen(),
+      //   );
       case allCategoriesList:
         return CustomPageRoute(
           child: const AllCategoriesList(),
@@ -100,10 +117,10 @@ class ScreenRoutes {
         return CustomPageRoute(
           child: const SubCategoriesList(),
         );
-      case filterHomeScreen:
-        return CustomPageRoute(
-          child: const FilterHomeScreen(),
-        );
+      // case filterHomeScreen:
+      //   return CustomPageRoute(
+      //     child: const FilterHomeScreen(),
+      //   );
       case filterScreen:
         return CustomPageRoute(
           child: const FilterScreen(),
@@ -120,10 +137,10 @@ class ScreenRoutes {
         return CustomPageRoute(
           child: const SetAdsLocationScreen(),
         );
-      case uploadMediaScreen:
-        return CustomPageRoute(
-          child: const UploadMediaScreen(),
-        );
+      // case uploadMediaScreen:
+      //   return CustomPageRoute(
+      //     child: const UploadMediaScreen(),
+      //   );
       case adsReviewContactScreen:
         return CustomPageRoute(
           child: const AdsReviewContactScreen(),
@@ -148,7 +165,58 @@ class ScreenRoutes {
         return CustomPageRoute(
           child: const ResetPasswordScreen(),
         );
-
+      case commercialScreen1:
+        return CustomPageRoute(
+          child: const CommercialScreen1(),
+        );
+      case commercialScreen2:
+        return CustomPageRoute(
+          child: const CommercialScreen2(),
+        );
+      case personalDetailsScreen:
+        return CustomPageRoute(
+          child: const PersonalDetailsScreen(),
+        );
+      case loginSecurityScreen:
+        return CustomPageRoute(
+          child: const LoginSecurityScreen(),
+        );
+      case addressDetailsScreen:
+        return CustomPageRoute(
+          child: const AddressDetailsScreen(),
+        );
+      case notificationScreen:
+        return CustomPageRoute(
+          child: const NotificationScreen(),
+        );
+      case secondNotificationScreen:
+        final results = settings.arguments as Map;
+        String title = results['title'];
+        return CustomPageRoute(
+          child: SecondNotificationScreen(title: title),
+        );
+      case togleNotficationsScreen:
+        final results = settings.arguments as Map;
+        String title = results['title'];
+        return CustomPageRoute(
+          child: TogleNotficationsScreen(title: title),
+        );
+      case languageScreen:
+        return CustomPageRoute(
+          child: const LanguageScreen(),
+        );
+      case helpSupportScreen:
+        return CustomPageRoute(
+          child: const HelpSupportScreen(),
+        );
+      case submitRequestScreen:
+        return CustomPageRoute(
+          child: const SubmitRequestScreen(),
+        );
+      case customDialougeScreen:
+        return CustomPageRoute(
+          child:  const CustomDialougeScreen(),
+        );
       default:
         return MaterialPageRoute(builder: (_) {
           return const Scaffold(

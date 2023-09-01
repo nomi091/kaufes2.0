@@ -15,7 +15,6 @@ class NetworkApiService extends BaseApiService {
     String url,
     dynamic queryParameters,
     bool tokentrue,
-    String? token,
   ) async {
     if (kDebugMode) {
       print('Api Url ====>$url');
@@ -28,13 +27,11 @@ class NetworkApiService extends BaseApiService {
           'Accept': 'application/json',
           'accessToken': "${await HiveService.getUserAccessToken()}",
           'refreshToken': "${await HiveService.getUserRefreshToken()}",
-          'lang': 'en'
         };
       } else {
         header = {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
-          'lang': 'en'
         };
       }
       final response = await dio
@@ -57,19 +54,29 @@ class NetworkApiService extends BaseApiService {
   //Post Api Responce
   @override
   Future postApiResponse(
-      String url, data, bool tokentrue, String? token) async {
+    String url,
+    data,
+    bool tokentrue,
+  ) async {
     try {
+      Map<String, String> header;
+
+      if (tokentrue) {
+        header = {
+          'Content-Type': 'application/json',
+          'accessToken': "${await HiveService.getUserAccessToken()}",
+          'refreshToken': "${await HiveService.getUserRefreshToken()}",
+        };
+      } else {
+        header = {'Content-Type': 'application/json'};
+      }
       if (kDebugMode) {
         print('Api Url ====>$url');
         print('Api data ====>$data');
+        print('Api data ====>$header');
       }
-      final headers = {'Content-Type': 'application/json'};
-      if (tokentrue) {
-        headers["Authorization"] = "Bearer $token";
-      }
-
       final response = await dio
-          .post(url, data: data, options: Options(headers: headers))
+          .post(url, data: data, options: Options(headers: header))
           .timeout(const Duration(seconds: 20));
       if (kDebugMode) {}
 
@@ -81,19 +88,63 @@ class NetworkApiService extends BaseApiService {
 
   //delete api responce
   @override
-  Future deleteApiResponse(String url, String? token) {
+  Future deleteApiResponse(
+    String url,
+  ) {
     throw UnimplementedError();
   }
 
   @override
-  Future putApiResponse(String url, data, bool tokentrue, String? token) {
-    throw UnimplementedError();
+  Future putApiResponse(
+    String url,
+    data,
+    bool tokentrue,
+  ) async {
+    try {
+      Map<String, String> header;
+      if (tokentrue) {
+        header = {
+          'Content-Type': 'application/json',
+          // 'Accept': 'application/json',
+          'accessToken': "${await HiveService.getUserAccessToken()}",
+          'refreshToken': "${await HiveService.getUserRefreshToken()}",
+        };
+      } else {
+        header = {'Content-Type': 'application/json'};
+      }
+      if (kDebugMode) {
+        print('Api Url ====>$url');
+        print('Api data ====>$data');
+        // print('Api header ====>$header');
+      }
+      final response = await dio
+          .put(url, data: data, options: Options(headers: header))
+          .timeout(const Duration(seconds: 20));
+
+      return returnResponse(response);
+    } on DioException catch (e) {
+      return jsonDecode(e.response.toString());
+    }
   }
 
-  dynamic returnResponse(Response response) {
+  dynamic returnResponse(Response response) async {
     if (response.statusCode == 200) {
+      if (response.headers["accesstoken"] != null &&
+          response.headers["refreshtoken"] != null) {
+        await HiveService.saveUserAccessToken(
+            response.headers["accesstoken"]!.first);
+        await HiveService.saveUserRefreshToken(
+            response.headers["refreshtoken"]!.first);
+      }
       return jsonDecode(response.toString());
     } else if (response.statusCode == 201) {
+      if (response.headers["accesstoken"] != null &&
+          response.headers["refreshtoken"] != null) {
+        await HiveService.saveUserAccessToken(
+            response.headers["accesstoken"]!.first);
+        await HiveService.saveUserRefreshToken(
+            response.headers["refreshtoken"]!.first);
+      }
       return jsonDecode(response.toString());
     } else {
       throw FetchDataException('Error occurred');

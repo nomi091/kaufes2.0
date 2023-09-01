@@ -1,16 +1,16 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kaufes/res/widgets/global_widgets/primary_button.dart';
+import 'package:kaufes/widgets/global_widgets/primary_button.dart';
 import 'package:kaufes/utils/constants/colors.dart';
 import 'package:kaufes/utils/constants/image_paths.dart';
 import 'package:kaufes/utils/routes/routes.dart';
 import 'package:provider/provider.dart';
 
-import '../../../res/widgets/global_widgets/filter_app_bar.dart';
+import '../../../view_model/auth_view_model/complete_signup_profil_view_model.dart';
+import '../../../widgets/global_widgets/filter_app_bar.dart';
 import '../../../utils/constants/constant_width.dart';
 import '../../../view_model/auth_view_model/auth_view_model.dart';
-import '../auth_widget/otp_email_verification.dart';
 
 class EmailConfirmationScreen extends StatefulWidget {
   const EmailConfirmationScreen({super.key});
@@ -26,8 +26,8 @@ class _EmailConfirmationScreenState extends State<EmailConfirmationScreen> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       // You can use the context here
-      final authcontroller = Provider.of<AuthViewModel>(context, listen: false);
-      authcontroller.getProfileData();
+      final profileController = Provider.of<SignUpProfileViewModel>(context, listen: false);
+      profileController.getProfileData();
     });
     super.initState();
   }
@@ -55,7 +55,7 @@ class _EmailConfirmationScreenState extends State<EmailConfirmationScreen> {
             Navigator.pushNamed(context, ScreenRoutes.logIn);
             return true;
           },
-          child: Consumer<AuthViewModel>(builder: (context, value, child) {
+          child: Consumer<SignUpProfileViewModel>(builder: (context, value, child) {
             return Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: size.width * 0, vertical: size.height * 0.1),
@@ -65,7 +65,7 @@ class _EmailConfirmationScreenState extends State<EmailConfirmationScreen> {
                 child: Column(
                   children: [
                     SvgPicture.asset(
-                      AppImages.svgEmailVarificationIcon,
+                      AppImages.trustedIcon,
                       width: size.width * 0.3,
                       height: size.height * 0.09,
                     ),
@@ -91,27 +91,26 @@ class _EmailConfirmationScreenState extends State<EmailConfirmationScreen> {
                     SizedBox(
                       height: size.height * 0.03,
                     ),
-                    OtpTextField(
-                      numberOfFields: 6,
-                      borderColor: const Color(0xFF512DA8),
-                      //set to true to show as box or false to show as dash
-                      showFieldAsBox: true,
-                      cursorColor: Colors.white,
-                      fillColor: Colors.white,
-                      fieldWidth: size.width * 0.13,
-                      focusedBorderColor: AppColors.primaryColor,
-                      //runs when a code is typed in
-                      //runs when every textfield is filled
-                      onSubmit: (String verificationCode) {
-                        value.emailOtpController.text =
-                            verificationCode;
-                            
-                       value.emailVerificatonApiResponce(context);
-                      }, // end onSubmit
-                    ),
-                    SizedBox(
-                      height: ConstantSize.getHeight(context) * 0.02,
-                    ),
+                    // OtpTextField(
+                    //   numberOfFields: 6,
+                    //   borderColor: const Color(0xFF512DA8),
+                    //   //set to true to show as box or false to show as dash
+                    //   showFieldAsBox: true,
+                    //   cursorColor: Colors.white,
+                    //   fillColor: Colors.white,
+                    //   fieldWidth: size.width * 0.13,
+                    //   focusedBorderColor: AppColors.primaryColor,
+                    //   //runs when a code is typed in
+                    //   //runs when every textfield is filled
+                    //   onSubmit: (String verificationCode) {
+                    //     value.emailOtpController.text =
+                    //         verificationCode;                 
+                    //    value.emailVerificatonApiResponce(context);
+                    //   }, // end onSubmit
+                    // ),
+                    // SizedBox(
+                    //   height: ConstantSize.getHeight(context) * 0.02,
+                    // ),
                     Padding(
                       padding: EdgeInsets.symmetric(
                           horizontal: size.width * 0.08,
@@ -128,36 +127,26 @@ class _EmailConfirmationScreenState extends State<EmailConfirmationScreen> {
                       height: ConstantSize.getHeight(context) * 0.02,
                     ),
                     Align(
-                      alignment: Alignment.bottomRight,
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 28.0),
-                        child: BtnPrimeryBackground(
-                          onPressed: () {
-                            value.sendOtpApiResponce(context);
-                          },
-                          isLoading: value.authloading,
-                          title: 'Resend',
-                          borderRadiusCircular: 5,
-                          borderSideWidth: 1,
-                          textStyle: MyTextStyles.headingxSmallBoldWhite,
-                          height: ConstantSize.getHeight(context) * 0.03,
-                          width: ConstantSize.getWidth(context) * 0.3,
-                          backgroundColor: AppColors.primaryColor,
-                          borderColor: AppColors.primaryColor,
-                        ),
+                      alignment: Alignment.topCenter,
+                      child: BtnPrimeryBackground(
+                        onPressed: () {
+                          Navigator.pushNamed(context,ScreenRoutes.logIn);
+                        },
+                        isLoading: value.authloading,
+                        title: 'login',
+                        borderRadiusCircular: 5,
+                        borderSideWidth: 1,
+                        textStyle: MyTextStyles.headingxSmallBoldWhite,
+                        height: ConstantSize.getHeight(context) * 0.04,
+                        width: ConstantSize.getWidth(context) * 0.3,
+                        backgroundColor: AppColors.primaryColor,
+                        borderColor: AppColors.primaryColor,
                       ),
                     ),
                     SizedBox(
                       height: ConstantSize.getHeight(context) * 0.02,
                     ),
-                    // buildCustomButton(
-                    //     context: context,
-                    //     isLoading: value.authloading,
-                    //     buttonPressed: () {
-                    //       Navigator.pushNamed(
-                    //           context, ScreenRoutes.detailProgressScreen);
-                    //     },
-                    //     title: 'verify_email'.tr())
+            
                   ],
                 ),
               ),
